@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Side Conversations · BTW",
+    "description": "Concurrent temporary conversations in DSH's native sidebar. Each new tab freezes its own context; explicitly closing it clears its history."
+  }
+}

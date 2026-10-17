@@ -1,0 +1,69 @@
+{
+  "name": "dsh-btw",
+  "version": "0.1.0-dev.4",
+  "private": true,
+  "description": "Native, concurrent, ephemeral sidebar conversations for DeepSeek Harness.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pyh-pan/dsh-btw.git"
+  },
+  "homepage": "https://github.com/pyh-pan/dsh-btw#readme",
+  "bugs": {
+    "url": "https://github.com/pyh-pan/dsh-btw/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "btw",
+    "side-conversations"
+  ],
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": "0.2.1-rc.2"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./dist/client-308f5c2ef188180a.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "dist/host-5b6884c90b8b58d5.js",
+    "dist/client-308f5c2ef188180a.js",
+    "dist/runtime.json",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.11"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-chat",
+        "@deepseek-ai/dsh-client-ui-input-trigger",
+        "@deepseek-ai/dsh-client-ui-commands"
+      ]
+    }
+  }
+}
